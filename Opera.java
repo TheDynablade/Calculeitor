@@ -1,21 +1,44 @@
-
 public class Opera {
 	public static double multiply (double Factor1, double Factor2){
 		double resultado = 0;
-		if (Factor2 >= 0){
-			resultado = multiply_complement (Factor1, Factor2);
-			return resultado;
-		}
-		else{
-			Factor2 = -Factor2;
-			if(Factor1 >= 0){
-				resultado = multiply_complement (Factor1, Factor2);
-				return -resultado;
-			}
-			else{
-				Factor1 = -Factor1;
+		if ((Factor2%(int)Factor2) == 0) {
+			if (Factor2 >= 0){
 				resultado = multiply_complement (Factor1, Factor2);
 				return resultado;
+			}
+			else{
+				Factor2 = -Factor2;
+				if(Factor1 >= 0){
+					resultado = multiply_complement (Factor1, Factor2);
+					return -resultado;
+				}
+				else{
+					Factor1 = -Factor1;
+					resultado = multiply_complement (Factor1, Factor2);
+					return resultado;
+				}
+			}
+		}
+		else {
+			while((Factor2 % (int)Factor2) != 0) {
+				Factor2 = multiply_complement (Factor2, 10);
+				Factor1 = division(Factor1,10);
+			}
+			if (Factor2 >= 0){
+				resultado = multiply_complement (Factor1, Factor2);
+				return resultado;
+			}
+			else{
+				Factor2 = -Factor2;
+				if(Factor1 >= 0){
+					resultado = multiply_complement (Factor1, Factor2);
+					return -resultado;
+				}
+				else{
+					Factor1 = -Factor1;
+					resultado = multiply_complement (Factor1, Factor2);
+					return resultado;
+				}
 			}
 		}
 	}
