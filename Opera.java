@@ -1,7 +1,10 @@
-
 public class Opera {
 	public static double multiply (double Factor1, double Factor2){
 		double resultado = 0;
+		while(divMod(Factor2,(int)Factor2) != 0) {
+			Factor2 = multiply_complement (Factor2, 10);
+			Factor1 = division(Factor1,10);
+		}
 		if (Factor2 >= 0){
 			resultado = multiply_complement (Factor1, Factor2);
 			return resultado;
@@ -49,6 +52,8 @@ public class Opera {
 		double total = 0;
 		int aux = 0;
 		String totalS = new String ("");
+		// while(div1 > div2){
+		// >= eso corrijo el error.
 		while(div1 >= div2){
 			div1 -= div2;
 			aux++;
@@ -73,5 +78,17 @@ public class Opera {
 			total = Double.valueOf(totalS);
 			return total;
 		}
+	}
+	public static double power (double base, double exponente){
+		double respuesta = 0;
+		return respuesta;
+	}
+	public static double divMod (double div1, double div2){
+		double resultado = 0;
+		return resultado;
+	}
+	private static double divMod_complement (double div1, double div2){
+		double total;
+		return total;
 	}
 }
