@@ -1,7 +1,10 @@
-
 public class Opera {
 	public static double multiply (double Factor1, double Factor2){
 		double resultado = 0;
+		while((Factor2 - (int)Factor2) != 0) {
+			Factor2 = multiply_complement (Factor2, 10);
+			Factor1 = division(Factor1,10);
+		}
 		if (Factor2 >= 0){
 			resultado = multiply_complement (Factor1, Factor2);
 			return resultado;
@@ -49,29 +52,55 @@ public class Opera {
 		double total = 0;
 		int aux = 0;
 		String totalS = new String ("");
-		while(div1 >= div2){
-			div1 -= div2;
-			aux++;
-		}
-		if(div1 == 0){
-			return aux;
+		// while(div1 > div2){
+		// >= eso corrijo el error.
+		if(div2 == 0){
+			return -1;
 		}
 		else{
-			totalS += aux + ".";
-			while (div1 != 0){
-				div1 = multiply(div1, 10);
-				aux = 0;
-				while(div1 >= div2){
-					div1 -= div2;
-					aux++;
-				}
-				totalS += aux;
-				if ((totalS.length()) == 15){
-					break;
-				}
+			while(div1 >= div2){
+				div1 -= div2;
+				aux++;
 			}
-			total = Double.valueOf(totalS);
-			return total;
+			if(div1 == 0){
+				return aux;
+			}
+			else{
+				totalS += aux + ".";
+				while (div1 != 0){
+					div1 = multiply(div1, 10);
+					aux = 0;
+					while(div1 >= div2){
+						div1 -= div2;
+						aux++;
+					}
+					totalS += aux;
+					if ((totalS.length()) == 15){
+						break;
+					}
+				}
+				total = Double.valueOf(totalS);
+				return total;
+			}
+		}
+	}
+	public static double power (double base, double exponente){
+		double respuesta = 0;
+		return respuesta;
+	}
+	public static double divMod (double div1, double div2){
+		double resultado = divMod_complement(div1, div2);
+		return resultado;
+	}
+	private static double divMod_complement (double div1, double div2){
+		if(div2 == 0){
+			return 0;
+		}
+		else{
+			while(div1 >= div2){
+				div1 -= div2;
+			}
+			return div1;
 		}
 	}
 }
