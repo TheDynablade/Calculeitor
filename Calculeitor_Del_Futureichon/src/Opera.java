@@ -1,8 +1,8 @@
 public class Opera {
 	public static double multiply (double Factor1, double Factor2){
-		/*Funci髇 para discriminar los factores de una multiplicaci髇 y para invocar la multiplicaci髇
+		/*Funci贸n para discriminar los factores de una multiplicaci贸n y para invocar la multiplicaci贸n
 		que se deba desarrollar.*/
-		//Factor1 y Factor2 son los factores de la multiplicaci髇.
+		//Factor1 y Factor2 son los factores de la multiplicaci贸n.
 		double resultado = 0;
 		String Factor2S = new String ("" + Factor2);
 		while((Factor2 - (int)Factor2) != (0)) {
@@ -58,6 +58,7 @@ public class Opera {
 			}
 		}
 	}
+	//Revisado y comprobado por Sergio
 	private static double division_complement (double div1, double div2){
 		double total = 0;
 		int aux = 0;
