@@ -4,9 +4,11 @@ public class Opera {
 		que se deba desarrollar.*/
 		//Factor1 y Factor2 son los factores de la multiplicación.
 		double resultado = 0;
-		while((Factor2 - (int)Factor2) != 0) {
-			Factor2 = multiply(Factor2, 10);
+		String Factor2S = new String ("" + Factor2);
+		while((Factor2 - (int)Factor2) != (0)) {
+			Factor2S = String.format("%.7g%n", multiply(Factor2, 10));
 			Factor1 = division(Factor1,10);
+			Factor2 = Double.valueOf(Factor2S.replace(",", "."));
 		}
 		if (Factor2 >= 0){
 			resultado = multiply_complement (Factor1, Factor2);
