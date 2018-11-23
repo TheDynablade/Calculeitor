@@ -37,6 +37,11 @@ public class Opera {
 	public static double division (double div1, double div2){
 		double resultado = 0;
 		if (div2 >= 0){
+			if(div1 < 0){
+				div1 = -div1;
+				resultado = division_complement (div1, div2);
+				return -resultado;
+			}
 			resultado = division_complement (div1, div2);
 			return resultado;
 		}
